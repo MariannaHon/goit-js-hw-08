@@ -67,13 +67,17 @@ const images = [
 const list = document.querySelector('.gallery');
 list.addEventListener("click", bigPicture);
 
+
 function bigPicture(event) {
     event.preventDefault();
     if (event.target.nodeName !== 'IMG') {
         return;
     }
 
-    const instance = basicLightbox.create('<img src= "${event.target.dataset.source}" width = "1112" height = "640"/>',
+    const bigPictureUrl = event.target.dataset.source;
+    console.log(bigPictureUrl);
+
+    const instance = basicLightbox.create(`<img src="${bigPictureUrl}" width="1112" height="640"/>`,
     {
         onShow: () => document.addEventListener("keydown", closeClick),
         onClose: () => document.removeEventListener("keydown", closeClick),

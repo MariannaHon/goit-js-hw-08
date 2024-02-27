@@ -39,6 +39,7 @@ img {
 .container {
     width: 1440px;
     padding: 24px 156px;
+    margin: 0 auto;
 }
 
 .gallery {
